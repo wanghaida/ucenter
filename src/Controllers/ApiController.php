@@ -5,6 +5,7 @@ namespace Haaid\UCenter\Controllers;
 use App\Http\Controllers\Controller;
 use Haaid\UCenter\Contracts\Api;
 use Haaid\UCenter\Services\Help;
+use Config;
 use Request;
 
 class ApiController extends Controller
@@ -23,7 +24,7 @@ class ApiController extends Controller
     public function run(Api $api)
     {
         $code = Request::input('code');
-        parse_str(self::authcode($code, 'DECODE', UC_KEY), $get);
+        parse_str(self::authcode($code, 'DECODE', Config::get('ucenter.key')), $get);
 
         if(empty($get)) {
             exit('Invalid Request');
