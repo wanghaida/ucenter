@@ -94,3 +94,18 @@ class UCenter extends \Haaid\UCenter\Services\Api
 ```
 
 3、重写业务代码即可。注意保证配置文件的命名空间正确。
+
+### 附录 2：路由的更多玩法
+
+除了在 `routes/web.php` 中写入路由以外，也可以并建议在 `routes/api.php` 中写入：
+
+```php
+# 建议
+UCenter::routes();
+# 或者
+Route::any(config('ucenter.url') . '/api/' . config('ucenter.apifilename'), '\Haaid\UCenter\Controllers\ApiController@run');
+```
+
+因为 `web.php` 当中，会自动加入 CSRF 的中间件，导致 UC Server 的 `post` 被拦截，写在 `api.php` 当中就不会。
+
+所以 UC Server 编辑应用时，`应用接口文件名称` 写入上方的路由地址，例如：`api/uc`。

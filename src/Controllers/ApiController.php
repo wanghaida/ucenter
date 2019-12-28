@@ -14,11 +14,15 @@ class ApiController extends Controller
 
     public function __construct()
     {
-        define('API_RETURN_SUCCEED', '1');
-        define('API_RETURN_FAILED', '-1');
-        define('API_RETURN_FORBIDDEN', '1');
+        if (!defined('API_RETURN_SUCCEED')) {
+            define('API_RETURN_SUCCEED', '1');
+            define('API_RETURN_FAILED', '-1');
+            define('API_RETURN_FORBIDDEN', '1');
+        }
 
-        define('API_ROOT', __DIR__.'/../');
+        if (!defined('API_ROOT')) {
+            define('API_ROOT', __DIR__.'/../');
+        }
     }
 
     public function run(Api $api)

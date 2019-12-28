@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'url'            => env('UC_URL', ''), // 应用的主 URL：接口 api 的前缀，比如 /xxx/api/uc.php 一般直接留空
+    'url'            => env('UC_URL', ''), // 应用的主 URL：接口 api 的前缀，比如 /xxx/api/uc 一般直接留空
     'connect'        => env('UC_CONNECT', null), // UCenter 连接方式：数据库方式（mysql）/接口方式（null）
     'dbhost'         => env('UC_DBHOST', 'localhost'),
     'dbuser'         => env('UC_DBUSER', 'root'),
