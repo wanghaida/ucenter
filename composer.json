@@ -1,0 +1,30 @@
+{
+    "name": "haaid/ucenter",
+    "description": "UCenter Client For Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "haaid",
+            "email": "me@wanghaida.com",
+            "homepage": "https://blog.wanghaida.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Haaid\\UCenter\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Haaid\\UCenter\\UCenterServiceProvider"
+            ],
+            "aliases": {
+                "UCenter": "Haaid\\UCenter\\Facades\\UCenter"
+            }
+        }
+    }
+}
